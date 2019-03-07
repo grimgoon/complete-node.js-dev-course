@@ -1,10 +1,7 @@
-const fs = require('fs');
+const getNotes = require('./notes');
 
-// fs.writeFileSync('notes.txt','My name is Alexander.');
+console.log(getNotes());
 
-try {
-    fs.appendFileSync('notes.txt', '\nNew line!');
-    console.log('The "data to append" was appended to file!');
-  } catch (err) {
-    /* Handle the error */
-  }
+// const add = require('./utils');
+// console.log(add(2,3));
+
