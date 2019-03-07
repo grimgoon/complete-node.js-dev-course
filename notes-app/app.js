@@ -1,13 +1,11 @@
-const validator = require('validator');
+const chalk = require('chalk');
 
 const getNotes = require('./notes');
+
+console.log(chalk.bold.inverse.rgb(10, 100, 200)('Hello!'));
 
 console.log(getNotes());
 
 
-console.log(validator.isURL('battlerite.com'));
 
-
-// const add = require('./utils');
-// console.log(add(2,3));
 
