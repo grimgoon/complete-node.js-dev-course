@@ -19,7 +19,7 @@ const fileName = '1-json.json';
 const data = fs.readFileSync(fileName);
 const meep = JSON.parse(data.toString());
 
-meep.name = "Alexnder";
+meep.name = "Alexander";
 meep.age = 24;
 
 
