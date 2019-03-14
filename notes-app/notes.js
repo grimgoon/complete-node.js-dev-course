@@ -7,6 +7,8 @@ getNotes = () => {
     return "Your notes..."
 }
 
+debugger
+
 const addNote = (title,body) => {
     const notes = loadNotes();
 
