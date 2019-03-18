@@ -1,36 +1,12 @@
 const geocode = require('./utils/geocode');
-
-// const urlDarksky  = 'https://api.darksky.net/forecast/db0a1be86676a8f0071e35dc0cac1c11/37.8267,-122.4233?units=si&lang=sv';
-
-
-// request({url : urlDarksky, json : true}, (error,response,body) => {
-
-//     if(error) {
-//         console.log('Unable to connect to Weather API');
-//     } else if(response.body.error) {
-//         console.log('Unable to find Location');
-//     } else {
-//         console.log(body.daily.data[0].summary);
-//         console.log("It is currently " + body.currently.temperature + " degrees out. There is a " + body.currently.precipProbability + "% chance of rain.");
-//     }
-// });
-
-// request({url : urlMapbox, json : true}, (error,response,body) => {
-//     if(error) {
-//         console.log('Meep, thing are wrong');
-//     } else if(body.body.features.length === 0) {
-//         console.log('Meep. The request is having troubles.');
-//     } else {
-//         console.log(body.features[0].center[0]); //Longitude
-//         console.log(body.features[0].center[1]); //Latitude
-//     }
-// });
-
-
-
-
+const forecast = require('./utils/forecast');
 
 geocode('Stockholm', (error,data) => {
     console.log('Error: ', error);
     console.log('Data: ', data);
 });
+
+forecast(-75.7088, 44.1545, (error, data) => {
+    console.log('Error', error)
+    console.log(data.temperature);
+  })
