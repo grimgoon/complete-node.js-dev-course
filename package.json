@@ -1,19 +1,17 @@
 {
-  "name": "complete-node.js-dev-course",
+  "name": "web-server",
   "version": "1.0.0",
-  "description": "The Complete Node.js Dev Course  Version 3.0 - Udemy Project",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start" : "node ./web-server/src/app.js"
+    "start" : "node /web-server/src/app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/grimgoon/complete-node.js-dev-course.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/grimgoon/complete-node.js-dev-course/issues"
-  },
-  "homepage": "https://github.com/grimgoon/complete-node.js-dev-course#readme"
+  "dependencies": {
+    "express": "^4.16.4",
+    "hbs": "^4.0.3",
+    "request": "^2.88.0"
+  }
 }
