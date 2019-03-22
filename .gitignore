@@ -64,3 +64,18 @@ typings/
 mongodb-data/mongod.lock
 
 
+mongodb-data/sizeStorer.wt
+mongodb-data/WiredTiger.wt
+mongodb-data/_mdb_catalog.wt
+mongodb-data/collection-0-8575911094793212582.wt
+mongodb-data/collection-2--4494834604324045192.wt
+mongodb-data/collection-4--4494834604324045192.wt
+mongodb-data/index-1-8575911094793212582.wt
+mongodb-data/index-3--4494834604324045192.wt
+mongodb-data/index-5--4494834604324045192.wt
+mongodb-data/index-6--4494834604324045192.wt
+mongodb-data/mongod.lock
+mongodb-data/diagnostic.data/metrics.2019-03-22T07-35-29Z-00000
+mongodb-data/diagnostic.data/metrics.interim
+mongodb-data/journal/WiredTigerLog.0000000001
+mongodb-data/journal/WiredTigerLog.0000000002
