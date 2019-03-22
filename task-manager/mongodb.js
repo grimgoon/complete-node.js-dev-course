@@ -11,8 +11,8 @@ const databaseName = 'task-manager';
 
 const id = new ObjectID();
 
-console.log(id.id);
-console.log(id.getTimestamp());
+// console.log(id.id);
+// console.log(id.getTimestamp());
 
 MongoClient.connect(connectionURL,{ useNewUrlParser : true}, (error, client) => {
     if(error) {
@@ -72,6 +72,31 @@ MongoClient.connect(connectionURL,{ useNewUrlParser : true}, (error, client) => 
 
     // });
 
+    // db.collection('users').findOne({ _id : new ObjectID("5c94b190f99a60097cd93b2a")}, (error, user) => {
+    //     if(error) {
+    //         console.log('Unable to fetch');
+    //     }
 
+    //     console.log(user);
+
+    // });
+
+    
+    // db.collection('users').find({age : 27}).toArray((error,users) => {
+    //     console.log(users);
+    // });
+
+    // db.collection('users').find({age : 27}, ).count((error,count) => {
+    //     console.log(count);
+    // });
+
+
+    db.collection('tasks').findOne({_id : new ObjectID("5c94a70a59a2523cccb86cad")},(error,tasks) => {
+        console.log(tasks);
+    });
+
+    db.collection('tasks').find({completed : false}).toArray((error,tasks) => {
+        console.log(tasks);
+    });
 
 });
