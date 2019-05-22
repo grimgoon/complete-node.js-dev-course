@@ -40,7 +40,6 @@ router.post('/users/logoutAll', authMiddleware, async (req,res) => {
     }
 });
 
-
 router.get('/users/me', authMiddleware, async (req, res) => {
     res.send(req.user);
 });
