@@ -13,7 +13,6 @@ const upload = multer({
         if(!file.originalname.match(/\.(png|jpg)$/)) {
             cb(new Error('File must be an image'));
         }
-
         cb(undefined,true)
     }
 })
