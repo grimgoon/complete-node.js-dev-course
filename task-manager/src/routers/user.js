@@ -5,7 +5,17 @@ const authMiddleware = require('../middleware/auth');
 const multer = require('multer');
 
 const upload = multer({
-    dest: 'avatars'
+    dest: 'avatars',
+    limits: {
+        fileSize: 2000000,
+    },
+    fileFilter(req,file,cb) {
+        if(!file.originalname.match(/\.(png|jpg)$/)) {
+            cb(new Error('File must be an image'));
+        }
+
+        cb(undefined,true)
+    }
 })
 
 
