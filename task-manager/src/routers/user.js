@@ -5,7 +5,6 @@ const authMiddleware = require('../middleware/auth');
 const multer = require('multer');
 
 const upload = multer({
-    dest: 'avatars',
     limits: {
         fileSize: 2000000,
     },
@@ -91,7 +90,7 @@ router.patch('/users/me', authMiddleware, async (req,res) => {
     }
 });
 
-router.delete('/users/me',authMiddleware, async (req, res) => {
+router.delete('/users/me', authMiddleware, async (req, res) => {
 
     try {
         //Old way:
@@ -108,11 +107,27 @@ router.delete('/users/me',authMiddleware, async (req, res) => {
     }
 });
 
-router.post('/users/me/avatar', upload.single('avatar') , async (req, res) => {
-    res.send();
+router.post('/users/me/avatar', authMiddleware, upload.single('avatar'), async (req, res) => {
+    try {
+        req.user.avatar = req.file.buffer;
+        await req.user.save();
+        res.send();
+    } catch(e) {
+        res.status(500).send();
+    }
+   
 }, (error, req, res, next) => {
     res.status(400).send({error: error.message});    
 })
 
+router.delete('/users/me/avatar', authMiddleware, async (req,res) => {
+    try {
+        req.user.avatar = undefined;
+        await req.user.save();
+        res.send();
+    } catch(e) {
+        res.status(500).send();
+    }
+});
 
 module.exports = router;
