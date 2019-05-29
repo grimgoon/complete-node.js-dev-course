@@ -100,9 +100,8 @@ router.delete('/users/me', authMiddleware, async (req, res) => {
         // if(!user) {
         //     return res.status(404).send();
         // }
-
         await req.user.remove();
-        res.send(user);
+        res.send(req.user);
 
     } catch(e) {
         res.status(500).send();
