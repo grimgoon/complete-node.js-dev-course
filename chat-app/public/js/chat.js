@@ -10,18 +10,21 @@ const $messages = document.querySelector('#messages');
 const $messageTemplate = document.querySelector('#message-template').innerHTML;
 const $messageLocationTemplate = document.querySelector('#locationMessage-template').innerHTML; 
 
+const timeFormat = 'HH:mm';
+
 socket.on('message', (message) => {
     console.log(message);
     const html = Mustache.render($messageTemplate, {
         message: message.text,
-        createdAt: moment(message.createdAt).format('HH:mm')
+        createdAt: moment(message.createdAt).format(timeFormat)
     });
     $messages.insertAdjacentHTML('beforeend',html);
 });
 
-socket.on('locationMessage', (url) => {
+socket.on('locationMessage', (obj) => {
     const html = Mustache.render($messageLocationTemplate, {
-        link: url
+        url: obj.url,
+        createdAt: moment(obj.createdAt).format(timeFormat)
     });
     $messages.insertAdjacentHTML('beforeend',html);
 });
