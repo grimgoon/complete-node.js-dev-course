@@ -38,7 +38,7 @@ const autoScroll = () => {
     }
 
 
-
+ 
 }
 
 socket.on('message', (message) => {
